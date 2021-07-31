@@ -1,0 +1,26 @@
+<table border='1'>
+  <thead>
+    <tr>
+      <td>Time</td>
+    </tr>
+    <tr>
+      <td></td>
+      <% @technicians.each do |tech| %>
+        <td><%= tech.name %> </td>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+    </tr>
+    <% WorkOrder::TIMES.each do |time| %>
+      <tr>
+        <td><%= time %></td>
+        <% @technicians.each do |tech| %>
+          <%= render partial: 'work_order', locals: { tech: tech, time: time } %>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

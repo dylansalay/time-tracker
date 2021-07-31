@@ -1,0 +1,9 @@
+<td id=<%=tech.work_order(time)&.id%>, data-toggle='modal' data-target=<%= "order-modal-#{tech.work_order(time)&.id}"%>><%= order_details(tech.work_order(time)) %></td>
+
+<div id="modal-<%= tech.work_order(time)&.id %>" class="modal hidden bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" display="none">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <%= tech.work_order(time)&.duration %>
+    </div>
+  </div>
+</div>
