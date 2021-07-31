@@ -29,4 +29,8 @@ $( document ).on('turbolinks:load', function() {
       $(`#modal-${id}`).modal('show')
     }
   })
+
+  $('.modal-close').on('click', function() {
+    $(this).parents('div').last().modal('hide')
+  })
 })
