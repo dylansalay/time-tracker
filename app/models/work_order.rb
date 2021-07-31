@@ -7,4 +7,8 @@ class WorkOrder < ApplicationRecord
   def scheduled_time
     self.time.beginning_of_hour.strftime("%H:%M")
   end
+
+  def order_location
+    return self.location.name + ', ' + self.location.city
+  end
 end

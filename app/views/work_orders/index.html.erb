@@ -1,19 +1,13 @@
-<table border='1'>
+<table class='table'>
   <thead>
     <tr>
-      <td>Time</td>
-    </tr>
-    <tr>
-      <td></td>
+      <th scope="col">Time</th>
       <% @technicians.each do |tech| %>
-        <td><%= tech.name %> </td>
+        <th scope="col"><%= tech.name %> </th>
       <% end %>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td></td>
-    </tr>
     <% WorkOrder::TIMES.each do |time| %>
       <tr>
         <td><%= time %></td>

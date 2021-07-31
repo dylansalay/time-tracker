@@ -20,3 +20,13 @@ require("jquery")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+$( document ).on('turbolinks:load', function() {
+  $('td[id^="work_order_"]').on('click', function() {
+
+    var work_order = $(this).attr('id')
+    var id = work_order.split("work_order_").pop()
+    if (id != ''){
+      $(`#modal-${id}`).modal('show')
+    }
+  })
+})
