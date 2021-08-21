@@ -31,6 +31,6 @@ $( document ).on('turbolinks:load', function() {
   })
 
   $('.modal-close').on('click', function() {
-    $(this).parents('div').last().modal('hide')
+    $('.work_order_modal').modal('hide')
   })
 })

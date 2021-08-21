@@ -1,0 +1,22 @@
+<div class='work_orders_table'>
+  <table class='table table-bordered'>
+    <thead>
+      <tr>
+        <th scope='col'>Time</th>
+        <% @technicians.each do |tech| %>
+          <th scope='col'><%= tech.name %> </th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% WorkOrder::TIMES.each do |time| %>
+        <tr>
+          <td><%= time %></td>
+          <% @technicians.each do |tech| %>
+            <%= render partial: 'work_order', locals: { tech: tech, time: time } %>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
