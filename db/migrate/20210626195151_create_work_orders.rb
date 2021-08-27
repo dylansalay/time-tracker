@@ -3,7 +3,8 @@ class CreateWorkOrders < ActiveRecord::Migration[6.0]
     create_table :work_orders do |t|
       t.references :technician, null: false, foreign_key: true
       t.references :location, null: false, foreign_key: true
-      t.datetime :time
+      t.date :date
+      t.string :time
       t.decimal :duration
       t.integer :price
 

@@ -37,13 +37,15 @@ ActiveRecord::Schema.define(version: 2021_08_20_220254) do
   create_table "work_orders", force: :cascade do |t|
     t.bigint "technician_id", null: false
     t.bigint "location_id", null: false
-    t.datetime "time"
+    t.date "date"
+    t.string "time"
     t.decimal "duration"
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "schedule_id"
+    t.bigint "schedule_id"
     t.index ["location_id"], name: "index_work_orders_on_location_id"
+    t.index ["schedule_id"], name: "index_work_orders_on_schedule_id"
     t.index ["technician_id"], name: "index_work_orders_on_technician_id"
   end
 
