@@ -1,0 +1,11 @@
+<div class="container schedule">
+  <h3> Work orders for <%= @schedule.date %> </h3>
+  <button class="add_work_order btn btn-default" type="button" data-toggle="modal" data-target="#add_work_order">
+    Add Work Order
+  </button>
+</div>
+<div class="row">
+  <%= render partial: "work_orders/work_orders_form" %>
+</div>
+
+<%= render partial: 'work_orders_table' %>

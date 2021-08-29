@@ -1,0 +1,49 @@
+<div id="add_work_order" class="modal work_order_modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5> Add Work Order </h5>
+        <button type="button" class="modal-close btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for @schedule.work_orders.build, url: schedule_work_orders_path(@schedule) do |f|  %>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group mt-3">
+                <%= f.label :location, class: 'block' %>
+                <%= f.collection_select(:location_id, Location.all, :id, :name) %>
+              </div>
+
+              <div class="form-group mt-3">
+                <%= f.label :technician, class: 'block' %>
+                <%= f.collection_select(:technician_id, Technician.all, :id, :name) %>
+              </div>
+
+              <div class="form-group mt-3">
+                <%= f.label :time, class: 'pull-left' %>
+                <%= f.select :time, WorkOrder::TIMES, class: 'form-control' %>
+                <%= f.hidden_field :date, value: @schedule.date %>
+              </div>
+
+              <div class="form-group mt-3">
+                <%= f.label :duration, class: 'pull-left' %>
+                <%= f.text_field :duration, placeholder: "In Minutes", class: 'form-control' %>
+              </div>
+
+              <div class="form-group mt-3">
+                <%= f.label :price, class: 'pull-left' %>
+                <%= f.text_field :price, class: 'form-control' %>
+              </div>
+
+            <div class="col-md-12">
+              
+              <div class="form-group">
+                <%= f.submit 'Save Work Order', class: 'btn btn-primary btn-block mt-5' %>
+              </div>
+            </div>    
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
