@@ -22,5 +22,62 @@
 }
 .work_orders_table {
   padding: 25px;
+}
 
+// .work_order_modal {
+//   .modal-body {
+//     label, select {
+//       display: inline-block;
+//     }
+//   }
+// }
+
+.buffalo_logo {
+  width: 100px;
+  margin-left: 25px;
+  float: left;
+}
+div.banner {
+  background-color: green;
+  height: 100px;
+  display:flex;
+  align-items:center;
+}
+
+div.title {
+  float: left;
+  width: 200px;
+  color: white;
+  font-size: 20px;
+}
+
+nav.menu {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0px;
+  margin: 0px;
+  font-size: 20px;
+  text-align: center;
+}
+
+nav.menu ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  display: inline;
+}
+
+nav.menu ul li {
+  padding: 0px;
+  margin: 0px;
+  display: inline;
+  vertical-align: middle;
+}
+
+nav.menu ul li a {
+  padding: 0px;
+  margin: 0px;
+  width: 60px;
+  display: inline-block;
+  color: white;
 }
