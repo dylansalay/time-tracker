@@ -11,7 +11,6 @@ class WorkOrdersController < ApplicationController
     
     respond_to do |format|
       if technician.is_busy?(@work_order)
-        byebug
         format.html { redirect_to schedule_path(@schedule), notice: 'Technician has another work order scheduled at this time' }
         format.json { render :show, status: :created, location: @work_order }
       elsif @work_order.save

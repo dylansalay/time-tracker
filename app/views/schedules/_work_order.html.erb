@@ -1,4 +1,4 @@
-<td id=<%="work_order_#{tech.work_order(time)&.id}"%> data-toggle='modal' data-target=<%= "order-modal-#{tech.work_order(time)&.id}"%>><%= order_details(tech.work_order(time)) %></td>
+<td id=<%="work_order_#{tech.work_order(time)&.id}"%> class="work_order_cell" data-toggle='modal' data-target=<%= "order-modal-#{tech.work_order(time)&.id}"%>><%= order_details(tech.work_order(time)) %></td>
 
 <div id="modal-<%= tech.work_order(time)&.id %>" class="modal work_order_modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
