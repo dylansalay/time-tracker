@@ -37,4 +37,32 @@ $( document ).on('turbolinks:load', function() {
   $('.add_work_order').on('click', function() {
     $('#add_work_order').modal('show')
   })
+
+  $(function(){
+    var selects = $('#work_orders_table tr').find('td[id^="work_order_"]')
+    selects.each(function (index, el) {
+      var work_order = $(this).attr('id')
+      var value = $(this).text();
+      if (!!value) {  
+        var id = work_order.split("work_order_").pop()
+        var duration = $(`#modal-${id} .modal-body h5:eq(2)`).text().match(/\d+/)[0]; 
+        console.log(duration)
+
+        var max = 60
+        var color = ((duration/60) * 100)
+        console.log(color)
+        var white = 1 - color
+        $(this).css('background', `linear-gradient(to bottom, yellow ${color}%, white ${white}%)`);
+
+        if (color > 100) {
+          var length = $('#work_orders_table th').length
+          var next_cell = selects.eq(index + length - 1)
+          var next_cell_color = color - 100
+
+          next_cell.css('background', `linear-gradient(to bottom, yellow ${next_cell_color}%, white 0%)`);
+        }
+      }
+    })
+  })
 })
+

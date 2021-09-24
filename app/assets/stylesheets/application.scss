@@ -20,17 +20,14 @@
   text-align: center;
   margin-top: 15px;
 }
-.work_orders_table {
+#work_orders_table {
   padding: 25px;
-}
 
-// .work_order_modal {
-//   .modal-body {
-//     label, select {
-//       display: inline-block;
-//     }
-//   }
-// }
+  .work_order_cell {
+    min-width: 275px;
+    height: 135px;
+  }
+}
 
 .buffalo_logo {
   width: 100px;
